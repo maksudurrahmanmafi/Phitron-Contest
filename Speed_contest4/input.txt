@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int N, Q;
+    cin >> N >> Q;
+    string S;
+    cin >> S;
+
+    // Step 1: calculate initial longest beautiful substring
+    int max_len = 1, curr = 1;
+    for (int i = 1; i < N; i++) {
+        if (S[i] == S[i-1]) curr++;
+        else curr = 1;
+        max_len = max(max_len, curr);
+    }
+
+    vector<int> ans;
+    ans.push_back(max_len);
+
+    // Step 2: compute last beautiful substring length
+    int last_len = 1;
+    for (int i = N-2; i >= 0; i--) {
+        if (S[i] == S.back()) last_len++;
+        else break;
+    }
+
+    // Step 3: process Q updates
+    while (Q--) {
+        char c;
+        cin >> c;
+
+        if (S.back() == c) last_len++;
+        else last_len = 1;
+
+        max_len = max(max_len, last_len);
+        ans.push_back(max_len);
+        S.push_back(c);
+    }
+
+    // print results
+    for (int i = 0; i < ans.size(); i++) {
+        cout << ans[i] << " ";
+    }
+    cout << "\n";
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    cin >> T;
+    while (T--) solve();
+
+    return 0;
+}
