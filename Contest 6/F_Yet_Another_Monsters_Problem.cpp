@@ -19,10 +19,14 @@ int main()
         {
             cin >> v[i];
         }
-        ll one = count(v.begin(),v.end(),1);
-        ll ans = n - one;
-        if(one%2==0)ans+=one/2;
-        else ans+=(one/2)+1;
+        sort(v.begin(),v.end());
+        // ll one = count(v.begin(),v.end(),1);
+        ll ans = n ;
+        for(int i =0;i<n;i++){
+            ans =min(ans,v[i]+(n-i-1));
+        }
+        // if(one%2==0)ans+=one/2;
+        // else ans+=(one/2)+1;
         cout<<ans<<'\n';
     }
     return 0;
