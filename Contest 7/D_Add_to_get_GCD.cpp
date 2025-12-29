@@ -12,14 +12,18 @@ int main()
     {
         int a, b;
         cin >> a >> b;
-        if (a == 1 && b == 1 || (a % 2 != 0 && b % 2 != 0))
-            cout << 2 << '\n';
-        else if (a % 2 == 0 && b % 2 == 0)
+        // if (a == 1 && b == 1 || (a % 2 != 0 && b % 2 != 0))
+        //     cout << 2 << '\n';
+        // else if (a % 2 == 0 && b % 2 == 0)
+        //     cout << 0 << '\n';
+        // else if ((a % 2 != 0 && b % 2 == 0) || (a % 2 == 0 && b % 2 != 0))
+        //     cout << 1 << '\n';
+        if (__gcd(a, b) > 1)
             cout << 0 << '\n';
-         else if ((a % 2 != 0 && b % 2 == 0)||(a % 2 == 0 && b % 2 != 0))
+        else if (__gcd(a + 1, b) > 1 || __gcd(a, b + 1) > 1)
             cout << 1 << '\n';
-
-
+        else
+            cout << 2 << '\n';
     }
     return 0;
 }
