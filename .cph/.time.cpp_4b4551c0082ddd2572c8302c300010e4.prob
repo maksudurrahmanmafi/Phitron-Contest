@@ -1,0 +1,1 @@
+{"name":"Local: time","url":"/Users/TBC/Desktop/Phitroncontest/time.cpp","tests":[{"id":1767703617762,"input":"556","output":""},{"id":1767703641529,"input":"1","output":""},{"id":1767703647145,"input":"140153","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/TBC/Desktop/Phitroncontest/time.cpp","group":"local","local":true}
